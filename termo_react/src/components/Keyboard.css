@@ -1,0 +1,26 @@
+.keyboard {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.keyboard-letter {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: gray;
+  border-radius: 6px;
+}
+
+.ok {
+  background:#0197f6;
+}
+
+.keyboard-letter:hover{
+  opacity: 0.8;
+}

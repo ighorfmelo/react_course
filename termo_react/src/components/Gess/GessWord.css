@@ -1,0 +1,17 @@
+.word-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  gap: 5px;
+}
+
+.letter {
+  border: 1px solid white;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  min-height: 50px;
+}
