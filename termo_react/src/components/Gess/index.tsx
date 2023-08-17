@@ -1,13 +1,16 @@
 import GessWord from "./GessWord"
-
-function Gess() {
+interface GessWordProps {
+  letter: '',
+  gesses: [],
+}
+function Gess({ letter }: GessWordProps) {
   return (
       <div>
-        <GessWord />
-        <GessWord />
-        <GessWord />
-        <GessWord />
-        <GessWord />
+        <GessWord letter={letter} />
+        <GessWord letter={letter} />
+        <GessWord letter={letter} />
+        <GessWord letter={letter} />
+        <GessWord letter={letter} />
       </div>
   )
 }
