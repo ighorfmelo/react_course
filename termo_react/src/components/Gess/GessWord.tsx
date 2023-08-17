@@ -1,16 +1,16 @@
 import './GessWord.css'
 
 interface GessWordProps {
-  letter: string,
+  gess: string,
 }
-function GessWord({ letter }: GessWordProps) {
+function GessWord({ gess }: GessWordProps) {
   return (
       <div className="word-container">
-        <div className='letter'>{letter}</div>
-        <div className='letter'>{letter}</div>
-        <div className='letter'>{letter}</div>
-        <div className='letter'>{letter}</div>
-        <div className='letter'>{letter}</div>
+        <div className='letter'>{gess[0]}</div>
+        <div className='letter'>{gess[1]}</div>
+        <div className='letter'>{gess[2]}</div>
+        <div className='letter'>{gess[3]}</div>
+        <div className='letter'>{gess[4]}</div>
       </div>
   )
 }

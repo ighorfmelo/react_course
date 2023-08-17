@@ -4,34 +4,45 @@ import Gess from './components/Gess'
 import Keyboard from './components/Keyboard'
 
 function App() {
-  const [letter, setLetter] = useState<string>("")
+  const [gess, setGess] = useState<string>("")
   const [gesses, setGesses] = useState<string[]>([])
 
   
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const eventTarget = event.target as HTMLElement
-    setLetter(eventTarget.innerText)
-    validateGesses(eventTarget.innerText)
+    const text = eventTarget.innerText
+    let finalGess = ""
+    if (text == 'Ok') {
+      setGess('')
+      setGesses(gesses.concat(['']))
+      return
+    }
+    if (text == 'Del') {
+      finalGess = gess.slice(0, -1)
+      setGess(finalGess)
+      addGess(finalGess)
+      return
+    }
+    if(gess.length >= 5) return
+    finalGess = gess.concat(text)
+    setGess(finalGess)
+    addGess(finalGess)
   }
 
-  const validateGesses = (text: string) => {
-    if(gesses.length === 0) {
-      const gess = text
-      setGesses([gess])
+  const addGess = (text: string) => {
+    if(gesses.length == 0) {
+      setGesses([text])
     }
     else {
-      const gess = gesses[gesses.length -1]
-      if(gess.length > 5) return
-      setGesses([gess.concat(text)])
+      setGesses([...gesses.slice(0, -1), text])
     }
-    console.log(gesses)
   }
 
   return (
       <div className="page">
         <div className="container">
             <h1>Termo React</h1>
-            <Gess letter={letter} />
+            <Gess gesses={gesses} />
             <Keyboard onClick={handleClick} />
         </div>
       </div>

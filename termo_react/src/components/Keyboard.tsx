@@ -10,7 +10,7 @@ function Keyboard({ onClick }: KeyboardProps) {
     <div className="keyboard">
       {
         letters.map((letter) => {
-          return <div className={`keyboard-letter ${letter === 'Ok' ? "ok" : ""}`} onClick={onClick}>{letter}</div>
+          return <div key={letter} className={`keyboard-letter ${letter === 'Ok' ? "ok" : ""}`} onClick={onClick}>{letter}</div>
         })
       }
     </div>
