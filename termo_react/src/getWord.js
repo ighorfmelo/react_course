@@ -749,5 +749,5 @@ const words = ["terra",
 "redea"]
 
 export default function word () {
-  return Math.floor(Math.random() * words.length);
+  return words[Math.floor(Math.random() * words.length)];
 }

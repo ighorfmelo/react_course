@@ -1,6 +1,7 @@
 import GessWord from "./GessWord"
 interface GessWordProps {
   gesses: string[],
+  validatedGess?: string[],
 }
 function Gess({ gesses }: GessWordProps) {
   const finalGesses = ['', '', '', '', '']
